@@ -1,0 +1,190 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ===== BACKGROUND IMAGE ===== */
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("highway.jpeg") no-repeat center center/cover;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dark overlay for readability */
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.85)
+  );
+  z-index: 1;
+}
+
+/* Slight cinematic zoom */
+body {
+  animation: slowZoom 25s infinite alternate ease-in-out;
+}
+
+@keyframes slowZoom {
+  from { background-size: 100%; }
+  to { background-size: 110%; }
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  width: 100%;
+  max-width: 450px;
+  padding: 20px;
+  z-index: 2;
+}
+
+/* ===== CARD ===== */
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  border-radius: 25px;
+  padding: 40px 30px;
+  color: white;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 0.6s ease;
+  transition: 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+/* ===== TITLE ===== */
+h1 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 30px;
+}
+
+/* ===== FILE UPLOAD ===== */
+.upload-section input {
+  display: none;
+}
+
+.upload-label {
+  display: block;
+  padding: 14px;
+  border: 2px dashed rgba(255,255,255,0.4);
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.upload-label:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+#preview {
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 12px;
+  max-height: 180px;
+  object-fit: cover;
+  display: none;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 15px;
+  margin-top: 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn.blue {
+  background: linear-gradient(45deg, #2196f3, #21cbf3);
+  color: white;
+}
+
+.btn.red {
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  color: white;
+}
+
+.btn:hover {
+  transform: scale(1.06);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+/* ===== LOCATION TEXT ===== */
+#locationText {
+  margin-top: 12px;
+  font-size: 13px;
+  opacity: 0.9;
+  min-height: 20px;
+}
+
+/* ===== LOADER ===== */
+.loader {
+  border: 4px solid rgba(255,255,255,0.3);
+  border-top: 4px solid #ff4b2b;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  margin: 20px auto;
+  animation: spin 1s linear infinite;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* ===== MODAL ===== */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal-content {
+  background: #1c1c1c;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  width: 320px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
