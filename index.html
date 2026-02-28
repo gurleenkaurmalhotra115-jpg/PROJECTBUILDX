@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Guardian - Emergency Cow Dispatch</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="card">
+
+    <h1>🐄 Guardian</h1>
+    <p class="subtitle">Report stray cattle. Prevent accidents.</p>
+
+    <!-- Upload Section -->
+    <div class="upload-section">
+      <label class="upload-label" for="imageInput">
+        📷 Click to Upload Photo
+      </label>
+      <input type="file" id="imageInput" accept="image/*">
+      <img id="preview" style="display:none;">
+    </div>
+
+    <!-- Detect Location -->
+    <button class="btn blue" onclick="detectLocation()">
+      📍 Detect Location
+    </button>
+
+    <div id="locationText" class="location-status"></div>
+
+    <!-- Submit -->
+    <button class="btn red" onclick="submitReport()" id="submitBtn" disabled>
+      🚨 Dispatch Guardian
+    </button>
+
+    <div id="loader" class="loader hidden"></div>
+
+  </div>
+</div>
+
+<!-- Success Modal -->
+<div class="modal" id="successModal">
+  <div class="modal-content">
+    <h2>🚨 Guardian Activated</h2>
+    <p>Nearest cattle response unit notified successfully.</p>
+    <button class="btn red" onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
