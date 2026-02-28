@@ -1,0 +1,7 @@
+{
+  "cows": [],
+  "ambulances": [
+    { "id": 1, "driver_name": "Ramesh", "location": "Karnal", "available": true },
+    { "id": 2, "driver_name": "Suresh", "location": "Panipat", "available": true }
+  ]
+}
